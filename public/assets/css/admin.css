@@ -1,0 +1,7 @@
+.menu-item.active {
+    color: unset !important;
+    background: #424e58 !important; 
+}
+.main-menu.menu-dark .navigation>li .active>a {
+    margin: 0 0rem;
+}
