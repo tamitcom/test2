@@ -163,12 +163,99 @@
     </div>
 </div>
 <!-- END: Content-->
-    
+<div class="modal fade text-left" id="defaultAR1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel1">ชมสินค้า น้ำผึ้งสด แบบเสมือนจริง</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <% if(device=='DESKTOP') { %> 
+                    <model-viewer style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="https://psu-ecomm.herokuapp.com/model3D/bee.usdz" src="https://psu-ecomm.herokuapp.com/model3D/bee.glb" alt="A 3D model of an astronaut" auto-rotate camera-controls>
+                        <button slot="ar-button" class="badge badge-danger round" >
+                            <i class=""><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
+                        </button>
+                    </model-viewer>
+                    <br/>
+                    <div id="qrcode1"></div>
+                    <h3 class="text-danger">อุปกรณ์ PC ไม่รอรับการทำงาน กรุณาลองสแกนบนมือถือหรือใช้อุปกรณ์อื่น</h3>
+                <% }else{ %>
+                    <model-viewer style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="https://psu-ecomm.herokuapp.com/model3D/bee.usdz" src="https://psu-ecomm.herokuapp.com/model3D/bee.glb" alt="A 3D model of an astronaut" auto-rotate camera-controls>
+                        <button slot="ar-button" class="badge badge-danger round" >
+                            <i class=""><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
+                        </button>
+                    </model-viewer>
+                <% } %>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-primary">หยิบใส่ตะกร้า</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade text-left" id="defaultAR2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel1">ชมสินค้า Poptoast แบบเสมือนจริง</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <% if(device=='DESKTOP') { %> 
+                    <model-viewer style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="https://psu-ecomm.herokuapp.com/model3D/pop-toast.usdz" src="https://psu-ecomm.herokuapp.com/model3D/pop-toast.glb" alt="A 3D model of an astronaut" auto-rotate camera-controls>
+                        <button slot="ar-button" class="badge badge-danger round" >
+                            <i class=""><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
+                        </button>
+                    </model-viewer>
+                    <br/>
+                    <div id="qrcode2"></div>
+                    <h3 class="text-danger">อุปกรณ์ PC ไม่รอรับการทำงาน กรุณาลองสแกนบนมือถือหรือใช้อุปกรณ์อื่น</h3>
+                <% }else{ %>
+                    <model-viewer style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="https://psu-ecomm.herokuapp.com/model3D/pop-toast.usdz" src="https://psu-ecomm.herokuapp.com/model3D/pop-toast.glb" alt="A 3D model of an astronaut" auto-rotate camera-controls>
+                        <button slot="ar-button" class="badge badge-danger round" >
+                            <i class=""><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
+                        </button>
+                    </model-viewer>
+                <% } %>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-primary">หยิบใส่ตะกร้า</button>
+            </div>
+        </div>
+    </div>
+</div>
 <%- include all-script %>
   <!-- BEGIN: Page JS-->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" ></script>
   <script src="assets/plugins/owl-carousel-2/owl.carousel.min.js" ></script>
+  <script type="text/javascript">
+    var qrcode = new QRCode("qrcode1", {
+        text: "https://psu-ecomm.herokuapp.com/model3D/bee.usdz",
+        width: 128,
+        height: 128,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+    var qrcode = new QRCode("qrcode2", {
+        text: "https://psu-ecomm.herokuapp.com/model3D/pop-toast.usdz",
+        width: 128,
+        height: 128,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });    
+</script>
   <script> 
+  
     $(document).ready(function(){
         var owl = $('.owl-carousel');
         owl.owlCarousel({

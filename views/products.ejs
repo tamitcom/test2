@@ -42,13 +42,13 @@
                                             -<%- (100-(pPrice/pPriceOriginal)*100) %>%
                                           </div>
                                         <% } %>   
-
+                                        <% if(modelAR!=''){ %>
                                         <div class="badge badge-danger round" style="left: unset; right: 15px;">
                                             <a href="" data-toggle="modal" data-target="#defaultAR" >
                                                 <i class="<%- title %>"><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
                                             </a>
                                         </div>
-
+                                        <% } %> 
                                         <img alt="Card image cap" class="img-fluid mb-1" src="<%- imagesMain %>">
                                     </div>
                                 </div>
@@ -123,6 +123,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <% if(modelAR!=''){ %>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h4>สินค้าเสมือนจริง 3 มิติ</h4>
+                                            <model-viewer style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="<%= (modelARIOS) ? modelARIOS : ''%>" src="<%= (modelAR) ? modelAR : ''%>" alt="A 3D model of an astronaut" auto-rotate camera-controls>
+                                                <button slot="ar-button" class="badge badge-danger round" >
+                                                    <i class="<%- title %>"><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
+                                                </button>
+                                            </model-viewer>
+                                        </div>
+                                    </div>
+                                    <% } %>
                                 </div>
                             </div>
                         </div>
@@ -399,7 +411,7 @@
             </div>
             <div class="modal-body text-center">
                 <% if(device=='DESKTOP') { %> 
-                    <model-viewer style="display: inline-block;" ios-src="https://ecommerce-platform.ml/3D/pop-toast.usdz" src="https://ecommerce-platform.ml/3D/pop-toast.glb" alt="A 3D model of an astronaut" auto-rotate camera-controls>
+                    <model-viewer style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="<%= (modelARIOS) ? modelARIOS : ''%>" src="<%= (modelAR) ? modelAR : ''%>" alt="A 3D model of an astronaut" auto-rotate camera-controls>
                         <button slot="ar-button" class="badge badge-danger round" >
                             <i class="<%- title %>"><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
                         </button>
@@ -408,7 +420,7 @@
                     <div id="qrcode"></div>
                     <h3 class="text-danger">อุปกรณ์ PC ไม่รอรับการทำงาน กรุณาลองสแกนบนมือถือหรือใช้อุปกรณ์อื่น</h3>
                 <% }else{ %>
-                    <model-viewer ios-src="https://ecommerce-platform.ml/3D/pop-toast.usdz" src="https://ecommerce-platform.ml/3D/pop-toast.glb" alt="A 3D model of an astronaut" auto-rotate camera-controls>
+                    <model-viewer style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="<%= (modelARIOS) ? modelARIOS : ''%>" src="<%= (modelAR) ? modelAR : ''%>" alt="A 3D model of an astronaut" auto-rotate camera-controls>
                         <button slot="ar-button" class="badge badge-danger round" >
                             <i class="<%- title %>"><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
                         </button>
@@ -441,7 +453,7 @@
   <% if(modelARIOS!=''){ %>
   <script type="text/javascript">
       var qrcode = new QRCode("qrcode", {
-        text: "<%= modelARIOS %>",
+        text: "https://psu-ecomm.herokuapp.com<%= modelARIOS %>",
         width: 128,
         height: 128,
         colorDark : "#000000",

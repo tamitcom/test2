@@ -692,4 +692,12 @@ a.pcs-sub:after {
 #qrcode {
     margin-top:15px;
     display: inline-block;
-  }
+}
+#qrcode1 {
+    margin-top:15px;
+    display: inline-block;
+}
+#qrcode2 {
+    margin-top:15px;
+    display: inline-block;
+}
