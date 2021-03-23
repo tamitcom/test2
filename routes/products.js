@@ -83,8 +83,8 @@ router.get('/poptoast', function(req, res, next) {
       "/assets/images/products/poptoast/images/150744722_889117901704432_6504430215330954442_o.jpg",
       "/assets/images/products/poptoast/images/150744722_889117901704432_6504430215330954442_o.jpg",
     ],
-    modelAR: '/model3D/pop-toast.glb',
-    modelARIOS: '/model3D/pop-toast.usdz',
+    modelAR: 'https://psu-ecomm.herokuapp.com/model3D/pop-toast.glb',
+    modelARIOS: 'https://psu-ecomm.herokuapp.com/model3D/pop-toast.usdz',
     device: req.device.type.toUpperCase(),
   });
   
