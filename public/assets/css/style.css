@@ -670,3 +670,26 @@ a.pcs-sub:after {
     box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 10%);
     margin: 15px 0;
 }
+.icon { 
+    width: 1.5rem; 
+    height: 1.5rem;
+    margin: .2em;
+  }
+.w-600{
+    font-weight: 600 !important;
+}
+
+.svg-white{
+    fill: #fff;
+}
+
+.icon2 {
+    width: 3rem;
+    height: 3rem;
+    margin: 0.1em;
+}
+
+#qrcode {
+    margin-top:15px;
+    display: inline-block;
+  }

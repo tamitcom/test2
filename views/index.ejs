@@ -1,7 +1,220 @@
 <%- include header %>
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome2100555 to <%= title %></p>
+  <!-- BEGIN: Page CSS-->
+  <link rel="stylesheet" type="text/css" href="assets/css/core/menu/menu-types/horizontal-menu.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/core/colors/palette-gradient.css">
+  <link rel="stylesheet" type="text/css" href="assets/fonts/simple-line-icons/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/core/colors/palette-gradient.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/pages/timeline.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/pages/dashboard-ecommerce.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/slick/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/owl-carousel-2/assets/owl.carousel.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/owl-carousel-2/assets/owl.theme.default.min.css">
+  <!-- END: Page CSS-->
+  <title>eCommerce platform</title>
+<%- include top-menu %>
+
+  <div class="navbar-light2 slider-container">
+    <div class="container">
+        <div class="row" style="margin-right:-18px; margin-left:-18px;">
+            <div class="col-md-3 bg-white d-none d-sm-block">
+                <div class="">
+                    <ul class="list-group list-group-flush p-1" >
+                        <li class="list-group-item p-0"><h5 class="pt-2"> หมวดหมู่สินค้า</h5></li>
+                        <li class="list-group-item p-0"><a href="products/category/อาหาร">อาหาร</a></li>
+                        <li class="list-group-item p-0"><a href="products/category/เครื่องนุ่งห่ม">เครื่องนุ่งห่ม</a></li>
+                        <li class="list-group-item p-0"><a href="products/category/เครื่องใช้">เครื่องใช้</a></li>
+                        <li class="list-group-item p-0"><a href="products/category/เครื่องประดับ">เครื่องประดับ</a></li>
+                        <li class="list-group-item p-0"><a href="products/category/ผลิตภัณฑ์สมุนไพร">ผลิตภัณฑ์สมุนไพร</a></li>
+                        <li class="list-group-item p-0"><a href="products/category/เครื่องดื่ม">เครื่องดื่ม</a></li>
+                        <li class="list-group-item p-0"><a href="products/category/ของที่ระลึก">ของที่ระลึก</a></li>
+                        <li class="list-group-item p-0"><a href="products/category/อื่นๆ">อื่นๆ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9 align-self-center p-0">
+                <div class="">
+                    <div class="slick-carousel slider" id="slider-home">
+                        <div class="slide slide-content" data-color="#ffe6d9" ><a href="promotion/1"><img src="assets/images/slider/01.jpg" class="img-fluid"/></a></div>
+                        <div class="slide slide-content" data-color="#09c4bd" ><a href="promotion/2"><img src="assets/images/slider/02.jpg" class="img-fluid"/></a></div>
+                        <div class="slide slide-content" data-color="#07437f" ><a href="promotion/3"><img src="assets/images/slider/03.jpg" class="img-fluid"/></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- BEGIN: Content-->
+  <div class="app-content container center-layout mt-2">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-body">            
+            <div class="product-flash-sale mb-2" id="product-flash-sale">
+                <h3 class="w-500 text-color">สินค้าแนะนำสำหรับคุณ</h3>
+                <h5 class="float-right">ดูเพิ่มเติม</h5>
+                <div class="owl-carousel">
+                    <%- include products/cover/สวนผึ้ง-บ้านคลองหินขาว/index  %>
+                    <%- include products/cover/poptoast/index  %>
+                    <%- include products/cover/กระถางแฮนด์เมด/index  %>
+                    <%- include products/cover/กระเป๋าสานรุ่นเปโบ้ใส่ของจุใจ/index  %>
+                    <%- include products/cover/ไก่เชียงพริกกะเหรี่ยง/index  %>
+                    <%- include products/cover/ปลาร้าบองสุก/index  %>
+                    <%- include products/cover/รัญญาฟาร์ม/เซรั่มเร่งผม/index  %>
+                    <%- include products/cover/รัญญาฟาร์ม/น้ำมะขาม/index  %>
+                    <%- include products/cover/สวนพืช-ส้มโอทับทิมสยาม/index  %>
+                    <%- include products/cover/ห่อหมกแช่แข็ง-รสมือแม่/index  %>                    
+                </div>
+            </div>
+            <div class="mb-2">
+                <h3 class="w-500 text-color">กำลังเป็นที่น่าสนใจ</h3>
+                <div class="owl-carousel">
+                    <%- include products/cover/สวนผึ้ง-บ้านคลองหินขาว/index  %>
+                    <%- include products/cover/สวนพืช-ส้มโอทับทิมสยาม/index  %> 
+                    <%- include products/cover/poptoast/index  %>                                     
+                    <%- include products/cover/ปลาร้าบองสุก/index  %>
+                    <%- include products/cover/กระถางแฮนด์เมด/index  %>   
+                    <%- include products/cover/รัญญาฟาร์ม/เซรั่มเร่งผม/index  %>    
+                    <%- include products/cover/ไก่เชียงพริกกะเหรี่ยง/index  %> 
+                    <%- include products/cover/รัญญาฟาร์ม/น้ำมะขาม/index  %>          
+                </div>
+            </div>            
+            <div class="mb-2">
+                <h3 class="w-500 text-color">สินค้าลดราคา</h3>
+                <div class="owl-carousel">
+                    <%- include products/cover/สวนผึ้ง-บ้านคลองหินขาว/index  %>
+                    <%- include products/cover/poptoast/index  %>
+                    <%- include products/cover/กระเป๋าสานรุ่นเปโบ้ใส่ของจุใจ/index  %>
+                    <%- include products/cover/ไก่เชียงพริกกะเหรี่ยง/index  %>
+                    <%- include products/cover/รัญญาฟาร์ม/น้ำมะขาม/index  %>
+                    <%- include products/cover/สวนพืช-ส้มโอทับทิมสยาม/index  %>
+                    <%- include products/cover/ห่อหมกแช่แข็ง-รสมือแม่/index  %> 
+                </div>
+            </div>
+            <div class="mb-2">
+                <h3 class="w-500 text-color">หมวดหมู่สินค้า</h3>
+                <div class="row">
+                    <div class="col-6 col-md-2">
+                        <a href="products/category/อาหาร">
+                            <div class="card-category">
+                                <img src="assets/images/category/01.jpg" class="img-fluid" />
+                                <div class="text-center pb-1"><h5 class="name-product">อาหาร</h5></div>
+                            </div>
+                        </a>                            
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <a href="products/category/เครื่องนุ่งห่ม">
+                            <div class="card-category">
+                                <img src="assets/images/category/02.jpg" class="img-fluid" />
+                                <div class="text-center pb-1"><h5 class="name-product">เครื่องนุ่งห่ม</h5></div>
+                            </div>
+                        </a>                            
+                    </div> 
+                    <div class="col-6 col-md-2">
+                        <a href="products/category/เครื่องใช้">
+                            <div class="card-category">
+                                <img src="assets/images/category/03.jpg" class="img-fluid" />
+                                <div class="text-center pb-1"><h5 class="name-product">เครื่องใช้</h5></div>
+                            </div> 
+                        </a>                                                       
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <a href="products/category/เครื่องประดับ">
+                            <div class="card-category">
+                                <img src="assets/images/category/04.jpg" class="img-fluid" />
+                                <div class="text-center pb-1"><h5 class="name-product">เครื่องประดับ</h5></div>
+                            </div> 
+                        </a>                                                       
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <a href="products/category/ผลิตภัณฑ์สมุนไพร">
+                            <div class="card-category">
+                                <img src="assets/images/category/05.jpg" class="img-fluid" />
+                                <div class="text-center pb-1"><h5 class="name-product">ผลิตภัณฑ์สมุนไพร</h5></div>
+                            </div> 
+                        </a>                                                       
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <a href="products/category/เครื่องดื่ม">
+                            <div class="card-category">
+                                <img src="assets/images/category/06.jpg" class="img-fluid" />
+                                <div class="text-center pb-1"><h5 class="name-product">เครื่องดื่ม</h5></div>
+                            </div>
+                        </a>                            
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <a href="products/category/ของที่ระลึก">
+                            <div class="card-category">
+                                <img src="assets/images/category/07.jpg" class="img-fluid" />
+                                <div class="text-center pb-1"><h5 class="name-product">ของที่ระลึก</h5></div>
+                            </div> 
+                        </a>                                                       
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <a href="products/category/อื่นๆ">
+                            <div class="card-category">
+                                <img src="assets/images/category/08.jpg" class="img-fluid" />
+                                <div class="text-center pb-1"><h5 class="name-product">อื่นๆ</h5></div>
+                            </div> 
+                        </a>                                                       
+                    </div>         
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+    
+<%- include all-script %>
+  <!-- BEGIN: Page JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" ></script>
+  <script src="assets/plugins/owl-carousel-2/owl.carousel.min.js" ></script>
+  <script> 
+    $(document).ready(function(){
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            loop:true,
+            margin:10,
+            autoplay:true,
+            autoplayTimeout:3000,
+            nav: true,
+            responsive:{
+                0:{
+                    items:2,
+                },
+                600:{
+                    items:3,
+                },
+                1000:{
+                    items:6,
+                }
+            },
+            navText: ["<i class='ft-chevron-left'></i>","<i class='ft-chevron-right'></i>"]
+        });
+    });
+    $().ready(function(){
+        const setColor = (ele) => {
+            if (ele.data("color")) {
+                ele.closest(".slider-container").css("background-color", ele.data("color"));
+            }
+        };
+        $("#slider-home").on("init", (slick) => {
+            setColor($(slick.target).find(".slick-active"));
+        })
+        .slick({
+            arrows: false,
+            centerPadding: "0px",
+            dots: true,
+            slidesToShow: 1,
+            infinite: false,
+            autoplay: true,
+            autoplaySpeed: 4000,
+        })
+        .on("beforeChange", (event, slick, currentSlide, nextSlide) => {
+            setColor(slick.$slider.find(`[data-slick-index=${nextSlide}]`));
+            console.log();
+        });
+    });    
+  </script> 
+  <!-- END: Page JS-->
   </body>
 </html>
