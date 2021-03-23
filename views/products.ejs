@@ -404,6 +404,7 @@
                             <i class="<%- title %>"><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
                         </button>
                     </model-viewer>
+                    <br/>
                     <div id="qrcode"></div>
                     <h3 class="text-danger">อุปกรณ์ PC ไม่รอรับการทำงาน กรุณาลองสแกนบนมือถือหรือใช้อุปกรณ์อื่น</h3>
                 <% }else{ %>
@@ -437,10 +438,18 @@
   <script> 
              
   </script>
-  
+  <% if(modelARIOS!=''){ %>
   <script type="text/javascript">
-    new QRCode(document.getElementById("qrcode"), "http://jindo.dev.naver.com/collie");
+      var qrcode = new QRCode("qrcode", {
+        text: "<%= modelARIOS %>",
+        width: 128,
+        height: 128,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });    
   </script>  
-  <!-- END: Page JS-->
+<% } %>
+<!-- END: Page JS-->
   </body>
 </html>
