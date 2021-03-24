@@ -176,7 +176,7 @@
             </div>
             <div class="modal-body text-center">
                 <% if(device=='DESKTOP') { %> 
-                    <model-viewer style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="https://psu-ecomm.herokuapp.com/model3D/bee.usdz" src="https://psu-ecomm.herokuapp.com/model3D/bee.glb" alt="A 3D model of an astronaut" auto-rotate camera-controls>
+                    <model-viewer ar auto-rotate camera-controls style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="https://psu-ecomm.herokuapp.com/model3D/bee.usdz" src="https://psu-ecomm.herokuapp.com/model3D/bee.glb" alt="A 3D model of an astronaut">
                         <button slot="ar-button" class="badge badge-danger round" >
                             <i class=""><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
                         </button>
@@ -185,7 +185,7 @@
                     <div id="qrcode1"></div>
                     <h3 class="text-danger">อุปกรณ์ PC ไม่รองรับการทำงาน กรุณาลองสแกนบนมือถือหรือใช้อุปกรณ์อื่น</h3>
                 <% }else{ %>
-                    <model-viewer style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="https://psu-ecomm.herokuapp.com/model3D/bee.usdz" src="https://psu-ecomm.herokuapp.com/model3D/bee.glb" alt="A 3D model of an astronaut" auto-rotate camera-controls>
+                    <model-viewer ar auto-rotate camera-controls style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="https://psu-ecomm.herokuapp.com/model3D/bee.usdz" src="https://psu-ecomm.herokuapp.com/model3D/bee.glb" alt="A 3D model of an astronaut">
                         <button slot="ar-button" class="badge badge-danger round" >
                             <i class=""><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
                         </button>

@@ -127,7 +127,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <h4>สินค้าเสมือนจริง 3 มิติ</h4>
-                                            <model-viewer style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="<%= (modelARIOS) ? modelARIOS : ''%>" src="<%= (modelAR) ? modelAR : ''%>" alt="A 3D model of an astronaut" auto-rotate camera-controls>
+                                            <model-viewer ar auto-rotate camera-controls style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="<%= (modelARIOS) ? modelARIOS : ''%>" src="<%= (modelAR) ? modelAR : ''%>" alt="A 3D model of an astronaut">
                                                 <button slot="ar-button" class="badge badge-danger round" >
                                                     <i class="<%- title %>"><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
                                                 </button>
@@ -411,7 +411,7 @@
             </div>
             <div class="modal-body text-center">
                 <% if(device=='DESKTOP') { %> 
-                    <model-viewer style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="<%= (modelARIOS) ? modelARIOS : ''%>" src="<%= (modelAR) ? modelAR : ''%>" alt="A 3D model of an astronaut" auto-rotate camera-controls>
+                    <model-viewer ar auto-rotate camera-controls style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="<%= (modelARIOS) ? modelARIOS : ''%>" src="<%= (modelAR) ? modelAR : ''%>" alt="A 3D model of an astronaut">
                         <button slot="ar-button" class="badge badge-danger round" >
                             <i class="<%- title %>"><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
                         </button>
@@ -420,7 +420,7 @@
                     <div id="qrcode"></div>
                     <h3 class="text-danger">อุปกรณ์ PC ไม่รอรับการทำงาน กรุณาลองสแกนบนมือถือหรือใช้อุปกรณ์อื่น</h3>
                 <% }else{ %>
-                    <model-viewer style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="<%= (modelARIOS) ? modelARIOS : ''%>" src="<%= (modelAR) ? modelAR : ''%>" alt="A 3D model of an astronaut" auto-rotate camera-controls>
+                    <model-viewer ar auto-rotate camera-controls style="display: inline-block; width: 100% !important; height: 320px !important;" ios-src="<%= (modelARIOS) ? modelARIOS : ''%>" src="<%= (modelAR) ? modelAR : ''%>" alt="A 3D model of an astronaut">
                         <button slot="ar-button" class="badge badge-danger round" >
                             <i class="<%- title %>"><svg class="icon2"><use xlink:href="#tam-ar-white"></use></svg></i>
                         </button>
