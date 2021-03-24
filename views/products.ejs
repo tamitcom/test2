@@ -39,7 +39,7 @@
                                     <div class="product-img d-flex align-items-center">
                                         <% if(pPriceOriginal>pPrice){ %>
                                           <div class="badge badge-success round">
-                                            -<%- (100-(pPrice/pPriceOriginal)*100) %>%
+                                            -<%- (100-(pPrice/pPriceOriginal)*100).toFixed(2) %>%
                                           </div>
                                         <% } %>   
                                         <% if(modelAR!=''){ %>

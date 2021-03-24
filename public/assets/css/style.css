@@ -36,16 +36,16 @@ form .form-group {
 }
 .btn-main {
 	border: 0px solid #fff;
-    border-image-source: linear-gradient(45deg, #f15a24, #c1272d);
+    border-image-source: linear-gradient(to right, #3043c0, #5743c9, #7741d1, #953dd6, #b236da);
     border-image-slice: 1;
-    background: linear-gradient(to right, #f15a24, #c1272d);
+    background: linear-gradient(to right, #3043c0, #5743c9, #7741d1, #953dd6, #b236da);
     color: #fff;
 }
 .btn-main:hover {
 	border: 0px solid #fff;
-    border-image-source: linear-gradient(45deg, #c74b1e, #a8252a);
+    border-image-source: linear-gradient(to right, #3043c0, #5743c9, #7741d1, #953dd6, #b236da);
     border-image-slice: 1;
-    background: linear-gradient(to right, #c74b1e, #a8252a);
+    background: linear-gradient(to right, #3043c0, #5743c9, #7741d1, #953dd6, #b236da);
 	color: #fff;
 }
 .max-width-480{
@@ -700,4 +700,11 @@ a.pcs-sub:after {
 #qrcode2 {
     margin-top:15px;
     display: inline-block;
+}
+.card-product{
+    border-radius: 20px;
+    padding: 10px;
+    min-height: 288px;
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 10%);
+    background-color: #fff;
 }

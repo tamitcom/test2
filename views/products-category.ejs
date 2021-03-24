@@ -1,15 +1,267 @@
 <%- include header %>
   <!-- BEGIN: Page CSS-->
-  
+  <link rel="stylesheet" type="text/css" href="/assets/css/core/menu/menu-types/horizontal-menu.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/core/colors/palette-gradient.css">
+  <link rel="stylesheet" type="text/css" href="/assets/fonts/simple-line-icons/style.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/core/colors/palette-gradient.css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/slick/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/owl-carousel-2/assets/owl.carousel.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/plugins/owl-carousel-2/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/plugins/extensions/noui-slider.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/core/colors/palette-noui.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/pages/ecommerce-shop.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/plugins/forms/checkboxes-radios.css">
   <!-- END: Page CSS-->
   <title><%- title %> | eCommerce platform</title>
 <%- include top-menu %>
   <!-- BEGIN: Content-->
-  <div class="app-content container center-layout mt-2">
+  <div class="app-content content">
     <div class="content-overlay"></div>
-    <div class="content-wrapper">
-        <div class="content-body">            
-          <%- title %>
+    <div class="content-wrapper container">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
+                <h3 class="content-header-title mb-0 d-inline-block">สินค้า<%- title %>ทั้งหมด</h3>
+                <div class="row breadcrumbs-top d-inline-block">
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">หน้าแรก</a>
+                            </li>
+                            <li class="breadcrumb-item active"><%- title %>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-detached content-right">
+            <div class="content-body">
+                <div class="product-shop">
+                    <div class="card">
+                        <div class="card-body">
+                            <span class="shop-title"><%- title %></span>
+                            <span class="float-right">
+                                <span class="result-text mr-1"> กำลังแสดง 12 จาก 203 รายการ</span>
+                                <span class="display-buttons">
+                                    <a href="#" class="active"><i class="ft-grid font-medium-2"></i></a>
+                                    <a href="#"><i class="ft-list font-medium-2"></i></a>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row match-height">
+                        <% if(title=='อาหาร'){%>
+                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card-product p-1 pull-up">
+                                <%- include products/cover/สวนผึ้ง-บ้านคลองหินขาว/index  %>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card-product p-1 pull-up">
+                              <%- include products/cover/poptoast/index  %>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card-product p-1 pull-up">
+                              <%- include products/cover/ไก่เชียงพริกกะเหรี่ยง/index  %>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card-product p-1 pull-up">
+                              <%- include products/cover/ปลาร้าบองสุก/index  %>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card-product p-1 pull-up">
+                              <%- include products/cover/รัญญาฟาร์ม/น้ำมะขาม/index  %>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card-product p-1 pull-up">
+                              <%- include products/cover/สวนพืช-ส้มโอทับทิมสยาม/index  %>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card-product p-1 pull-up">
+                              <%- include products/cover/ห่อหมกแช่แข็ง-รสมือแม่/index  %>
+                            </div>
+                          </div>
+                        <% }else if(title=='เครื่องนุ่งห่ม'){ %>
+
+                        <% }else if(title=='เครื่องใช้'){ %>
+                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card-product p-1 pull-up">
+                              <%- include products/cover/กระเป๋าสานรุ่นเปโบ้ใส่ของจุใจ/index  %>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card-product p-1 pull-up">
+                              <%- include products/cover/กระถางแฮนด์เมด/index  %>
+                            </div>
+                          </div>
+                        <% }else if(title=='เครื่องประดับ'){ %>
+
+                        <% }else if(title=='ผลิตภัณฑ์สมุนไพร'){ %>
+                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card-product p-1 pull-up">
+                                <%- include products/cover/สวนผึ้ง-บ้านคลองหินขาว/index  %>
+                            </div>
+                          </div>
+                        <% }else if(title=='เครื่องดื่ม'){ %>
+                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card-product p-1 pull-up">
+                                <%- include products/cover/สวนผึ้ง-บ้านคลองหินขาว/index  %>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card-product p-1 pull-up">
+                              <%- include products/cover/รัญญาฟาร์ม/น้ำมะขาม/index  %>
+                            </div>
+                          </div>
+                        <% }else if(title=='ของที่ระลึก'){ %>
+
+                        <% }else if(title=='อื่นๆ'){ %>
+
+                        <% } %>
+                        
+
+                        <div class="col-12 pt-1">
+                            <div class="card">
+                                <div class="card-content">
+                                    <ul class="pagination justify-content-center pagination-separate pagination-flat">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-detached sidebar-left">
+            <div class="sidebar">
+                <div class="sidebar-content d-none d-lg-block sidebar-shop">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="search">
+                                <input id="basic-search" type="text" placeholder="ค้นหาสินค้าที่นี่..." class="basic-search">
+                                <i class="ficon ft-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="categories-list">
+                                <div class="category-title pb-1">
+                                    <h4 class="card-title mb-0">หมวดหมู่สินค้า</h4>
+                                    <hr>
+                                </div>
+                                <div class="product-cat" id="categories">
+                                    <ul class="treeview">
+                                        <li class="open"><span>อาหาร</span>
+                                            <ul>
+                                                <li class="active"><span>ปังกรอบสี่เหลี่ยม</span></li>
+                                                <li><span>ไก่เชียงพริกกะเหรี่ยง</span></li>
+                                                <li><span>มะขามหวาน</span></li>
+                                            </ul>
+                                        </li>
+                                        <li><span>เครื่องนุ่งห่ม</span>
+                                            <ul>
+                                                <li><span>iPad</span></li>
+                                                <li><span>iPad Pro</span></li>
+                                            </ul>
+                                        </li>
+                                        <li><span>เครื่องใช้และเครื่องประดับ</span>
+                                            <ul>
+                                                <li><span>กระเป๋าสานรุ่นเปโบ้</span></li>
+                                                <li><span>ชุดน้ำตก​มิ​นิมอล</span></li>
+                                                <li><span>กระถางปลูกต้นไม้</span></li>
+                                            </ul>
+                                        </li>
+                                        <li ><span>ผลิตภัณฑ์สมุนไพร</span>
+                                            <ul>
+                                                <li ><span>เซรั่มเร่งผม</span></li>
+                                            </ul>
+                                        </li>
+                                        <li><span>เครื่องดื่ม</span>
+                                            <ul>
+                                                <li><span>มะขามหวาน</span></li>
+                                            </ul>
+                                        </li>
+                                        <li><span>ของที่ระลึก</span>
+                                            <ul>
+                                                <li><span>01</span></li>
+                                                <li><span>02</span></li>
+                                            </ul>
+                                        </li>
+                                        <li><span>อื่นๆ</span>
+                                            <ul>
+                                                <li><span>01</span></li>
+                                                <li><span>02</span></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /Categories List -->
+
+                           
+                            <!-- Brands -->
+                            <div class="brands">
+                                <div class="category-title mt-3 pb-1">
+                                    <h4 class="card-title mb-0">ร้านค้า</h4>
+                                    <hr>
+                                </div>
+                                <div class="search-box">
+                                    <input id="brandInput" type="text" placeholder="Search Brand" class="product-search">
+                                    <i class="ficon ft-search"></i>
+                                </div>
+                                <div class="sidebar-list" id="brands">
+                                    <ul class="skin-square skin">
+                                        <li><input type="checkbox" class="apple" id="apple"><label for="apple"> <a href="#">ร้านค้า 01 <span class="count">(4)</span></a></label></li>
+                                        <li><input type="checkbox" class="lenovo" id="lenovo"><label for="lenovo"> <a href="#"> ร้านค้า 02
+                                                    <span class="count">(5)</span></a></label></li>
+                                        <li><input type="checkbox" class="fitbit" id="fitbit"><label for="fitbit"><a href="#"> ร้านค้า 03
+                                                    <span class="count">(6)</span></a></label></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /Brand -->
+
+                            <!-- Featured Image -->
+                            <div class="featured">
+                                <div class="category-title mt-3 pb-1">
+                                    <h4 class="card-title mb-0">โฆษณา</h4>
+                                    <hr>
+                                </div>
+                                <div class="featured-image bg-success bg-lighten-2">
+                                    <a href="product-detail.html">
+                                        <div class="badge badge-danger">Best Deal</div>
+                                        <img src="assets/images/elements/samsung-gear.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- /Featured Image -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -17,7 +269,16 @@
     
 <%- include all-script %>
   <!-- BEGIN: Page JS-->
-  
+  <script src="/assets/vendors/js/ui/prism.min.js"></script>
+  <script src="/assets/vendors/js/extensions/jquery.raty.js"></script>
+  <script src="/assets/vendors/js/extensions/jquery.cookie.js"></script>
+  <script src="/assets/vendors/js/extensions/jquery.treeview.js"></script>
+  <script src="/assets/vendors/js/extensions/wNumb.js"></script>
+  <script src="/assets/vendors/js/extensions/nouislider.min.js"></script>
+  <script src="/assets/vendors/js/forms/icheck/icheck.min.js"></script>
+  <script src="/assets/plugins/owl-carousel-2/owl.carousel.min.js" ></script>
+  <script src="/assets/js/scripts/pages/content-panel-sidebar.js"></script>
+  <script src="/assets/js/scripts/pages/ecommerce-product-shop.js"></script>
   <!-- END: Page JS-->
   </body>
 </html>

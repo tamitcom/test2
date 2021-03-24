@@ -8,8 +8,78 @@
   <div class="app-content container center-layout mt-2">
     <div class="content-overlay"></div>
     <div class="content-wrapper">
-        <div class="content-body">            
-            
+        <div class="content-body">  
+          <section class="row flexbox-container pt-1 pb-3">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="col-lg-4 col-md-8 col-10 box-shadow-2 p-0">
+                    <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                        <div class="card-header border-0 pb-0">
+                            <div class="card-title text-center">
+                                <h4 class="line-on-side"><span>เข้าสู่ระบบ</span></h4>
+                                <p class="signup-link register mb-0">ยังไม่มีบัญชีผู้ใช้งาน? <a href="/register">สร้างบัญชี</a></p>
+                            </div>
+                        </div>
+                        <div class="card-content">     
+                            <div class="card-body">                                        
+                                <div id="form-login">
+                                    <form class="form-horizontal" method="POST" action="/login" autocomplete="off" >                                            
+                                        <label>เบอร์โทรศัพท์หรือรหัสสมาชิก</label>
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <input type="text" class="form-control" name="userTelORuserID"  maxlength="20" placeholder="เบอร์โทรศัพท์หรืออีเมล"
+                                                value=""
+                                             required>
+                                            <div class="form-control-position">
+                                                <i class="ft-user"></i>
+                                            </div>
+                                            <span class="messageTel"></span>
+                                        </fieldset>
+                                        <div class="d-flex justify-content-between">
+                                            <label>รหัสผ่าน</label>
+                                            <a href="javascript:void(0);" class="forgot-pass-link" id="to-recover"> ลืมรหัสผ่าน?</a>
+                                        </div>
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <input type="password" class="form-control" id="userPass" name="userPass" value="" placeholder="รหัสผ่านเพื่อเข้าสู่ระบบ 6-30 ตัวอักษร" required>
+                                            <div class="form-control-position">
+                                                <i class="ft-lock"></i>
+                                            </div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="toggle-password" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </fieldset>
+                                        <div class="form-group row">
+                                            <div class="col-12 text-center text-sm-left pr-0">
+                                                <fieldset>
+                                                    <input type="checkbox" id="remember" value="1" class="chk-remember" name="remember" checked> 
+                                                    <label class="new-control-indicator" for="remember" >จำฉันไว้ในระบบ </label>
+                                                </fieldset>
+                                            </div>                                               
+                                        </div>
+                                        <button type="submit" class="btn btn-main btn-block" name="login" ><i class="ft-user-login"></i> เข้าสู่ระบบ</button>
+                                    </form>
+                                </div>
+
+                                <div id="form-resetpass">  
+                                    <form id="inviter" method="POST" action="/login">
+                                        <label>เบอร์โทรศัพท์หรือรหัสสมาชิก</label>
+                                        <fieldset class="form-group position-relative has-icon-left">
+                                            <input type="text" class="form-control" name="userTelORuserID" maxlength="20" placeholder="เบอร์โทรศัพท์หรืออีเมล" required>
+                                            <div class="form-control-position">
+                                                <i class="ft-user"></i>
+                                            </div>
+                                            <span class="messageTel"></span>
+                                        </fieldset>
+                                        <button type="submit" class="btn btn-main btn-danger btn-block" name="recover" ><i class="ft-user-login"></i> ขอรหัสผ่านใหม่</button>
+                                    </form>
+                                    <div class="text-right form-group mb-0 mt-2">
+                                        <div class="" id="to-loginform">                                        
+                                            <a href="javascript:void(0)" class="text-info ml-1">ลงชื่อเข้าใช้งาน</a>
+                                        </div>
+                                    </div>
+                                </div>                         
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         </div>
     </div>
 </div>
@@ -17,7 +87,30 @@
     
 <%- include all-script %>
   <!-- BEGIN: Page JS-->
-  
+  <script>
+    $(document).ready(function(){           
+        var togglePassword = document.getElementById("toggle-password");            
+        if (togglePassword) {
+            togglePassword.addEventListener('click', function() {
+            var x = document.getElementById("userPass");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            });
+        }
+        $('#to-recover').on("click", function() {
+            $("#form-login").slideUp();
+            $("#form-resetpass").fadeIn();
+        });
+        $("#form-resetpass").slideUp(0);
+        $('#to-loginform').on("click", function() {
+            $("#form-login").fadeIn();
+            $("#form-resetpass").slideUp();
+        });
+    });
+</script>
   <!-- END: Page JS-->
   </body>
 </html>

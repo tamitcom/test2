@@ -9,7 +9,80 @@
     <div class="content-overlay"></div>
     <div class="content-wrapper">
         <div class="content-body">            
-            
+          <section class="row flexbox-container pt-1 pb-3">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="col-lg-4 col-md-8 col-10 box-shadow-2 p-0">
+                    <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+                        <div class="card-header border-0 pb-0">
+                            <div class="card-title text-center">
+                                <h4 class="line-on-side"><span>สมัครสมาชิก</span></h4>
+                                <p class="signup-link register mb-0">มีบัญชีอยู่แล้ว? <a href="/login">เข้าสู่ระบบ</a></p>
+                            </div>
+                        </div>
+                        <div class="card-content">     
+                            <div class="card-body">                                                                                
+                                <form class="form-horizontal" method="POST" action="/register" autocomplete="off" >
+                                    <label>ชื่อจริง</label>
+                                    <fieldset class="form-group position-relative has-icon-left">                                                
+                                        <input type="text" class="form-control" name="userName" maxlength="200" placeholder="ชื่อจริง" aria-invalid="false" required>
+                                        <div class="form-control-position">
+                                            <i class="ft-user"></i>
+                                        </div>
+                                    </fieldset>
+                                    <label>นามสกุล</label>
+                                    <fieldset class="form-group position-relative has-icon-left">
+                                        <input type="text" class="form-control" name="userLastName" maxlength="200" placeholder="นามสกุล" required>
+                                        <div class="form-control-position">
+                                            <i class="ft-user"></i>
+                                        </div>
+                                    </fieldset>
+                                    <label>เบอร์โทรศัพท์</label>
+                                    <fieldset class="form-group position-relative has-icon-left">
+                                        <input type="tel" class="form-control" id="userTel" name="userTel" pattern="\d*" maxlength="10" placeholder="เบอร์โทรศัพท์" onKeyPress="return chkNumber(this);" required>
+                                        <div class="form-control-position">
+                                            <i class="ft-phone"></i>
+                                        </div>
+                                        <span class="messageTel"></span>
+                                    </fieldset>
+                                    <label>อีเมล (ไม่จำเป็น)</label>
+                                    <fieldset class="form-group position-relative has-icon-left">
+                                        <input type="email" class="form-control" id="userEmail" name="userEmail" placeholder="อีเมล (ไม่ต้องกรอกก็ได้)">
+                                        <div class="form-control-position">
+                                            <i class="ft-at-sign"></i>
+                                        </div>
+                                        <span class="messageEmail"></span>
+                                    </fieldset>
+                                    <label>รหัสผ่าน</label>
+                                    <fieldset class="form-group position-relative has-icon-left" id="show_hide_password">
+                                        <input type="password" class="form-control" id="userPass" name="userPass" placeholder="รหัสผ่านใหม่เพื่อเข้าสู่ระบบ 6-30 ตัวอักษร" required>
+                                        <div class="form-control-position">
+                                            <i class="ft-lock"></i>
+                                        </div>                                                
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="toggle-password" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                    </fieldset>
+                                    <div class="form-group row">
+                                        <div class="col-12 text-center text-sm-left pr-0">
+                                            <fieldset>
+                                                <input type="checkbox" id="termsOFService" name="termsOFService" value="1" class="chk-remember" required> 
+                                                <label class="new-control-indicator" for="termsOFService" >ฉันเข้าใจและยอมรับ </label><span><a href="/pages-privacy" target="_blank">  เงื่อนไขการใช้บริการ </a></span>
+                                            </fieldset>
+                                        </div>                                               
+                                    </div>
+                                    <button type="submit" class="btn btn-main btn-block" name="register" id="btnSubmit"><i class="ft-user-plus"></i> สมัครสมาชิก</button>
+                                </form>
+                                <div class="pt-1 text-center line-on-side"><span>หรือสมัครด้วย</span></div>
+                                <div class="pt-1">
+                                    <a href="login-with-bg-image.html" class="btn btn-facebook btn-block"><i class="ft-facebook"></i>  ลงชื่อเข้าใช้ด้วย Facebook </a>
+                                </div>
+                                <div class="pt-1">
+                                    <a href="login-with-bg-image.html" class="btn btn-line btn-block"><i class="fab fa-line"></i> ลงขื่อเข้าใช้ด้วย Line</a>
+                                </div>                                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         </div>
     </div>
 </div>
@@ -17,7 +90,19 @@
     
 <%- include all-script %>
   <!-- BEGIN: Page JS-->
-  
+  <script>
+    var togglePassword = document.getElementById("toggle-password");            
+            if (togglePassword) {
+                togglePassword.addEventListener('click', function() {
+                var x = document.getElementById("userPass");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+                });
+            }
+  </script>
   <!-- END: Page JS-->
   </body>
 </html>
